@@ -1,3 +1,4 @@
+import { Database } from "@/services/database.types";
 import { z } from "zod";
 
 export const categories = [
@@ -67,3 +68,20 @@ export type Issue = z.infer<typeof issueSchema>;
 export type Category = z.infer<typeof category>;
 export type Priority = z.infer<typeof priority>;
 export type Status = z.infer<typeof status>;
+
+export interface IssueFromDb {
+    category: string;
+    description: string;
+    id: string;
+    image: string | null;
+    location: string | null;
+    priority: Database["public"]["Enums"]["Priority"];
+    reportedAt: string;
+    reportedBy: string | null;
+    resolutionNotes: string | null;
+    resolvedAt: string | null;
+    resolvedBy: string | null;
+    status: Database["public"]["Enums"]["Status"];
+    synced: boolean;
+    title: string;
+}

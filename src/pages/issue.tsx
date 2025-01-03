@@ -21,19 +21,19 @@ const initialForm: IssueType = {
 };
 
 export function Issue() {
-  const [issueImage, setIssueImage] = useState<string | null>(null);
+  const [issueImage, ] = useState<string | null>(null);
   const [loadingData, setLoadingData] = useState(false);
-  const [showForm, setShowForm] = useState(false);
+  const [, setShowForm] = useState(false);
   const [openCategoryOptions, setOpenCategoryOptions] = useState(false);
   const [errors, setErrors] = useState({
     title: "",
     description: "",
     category: "",
   });
-  const [selectedIndex, setSelectedIndex] = useState({
-    category: 0,
-    priority: 0,
-  });
+  // const [selectedIndex, setSelectedIndex] = useState({
+  //   category: 0,
+  //   priority: 0,
+  // });
 
   const [form, setForm] = useState<IssueType>(initialForm);
 

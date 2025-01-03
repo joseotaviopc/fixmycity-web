@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GetIssues } from "../services/supabase";
-import { Issue } from "../db/schema";
+import { IssueFromDb } from "../db/schema";
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +10,7 @@ import {
 
 
 export function Reports() {
-  const [issues, setIssues] = useState<Issue[]>([]);
+  const [issues, setIssues] = useState<IssueFromDb[]>([]);
     const [reload, setReload] = useState(true);
 
     async function fetchIssues() {
